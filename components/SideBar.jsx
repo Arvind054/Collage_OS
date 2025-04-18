@@ -39,8 +39,8 @@ const SideBar = () => {
         <div>
           <h1 className='btn btn-primary btn-lg w-full'>Students Corner</h1>
 
-          <Link href='/GeminiChat'>
-            <button className="btn btn-ghost w-full capitalize">Gemini ChatBot</button>
+          <Link href='/RulesAndRegulationBot'>
+            <button className="btn btn-ghost w-full capitalize">Rules & Regulation Bot</button>
           </Link>
           <Link href='/ResumeScore'>
             <button className="btn btn-ghost w-full capitalize">Resume ATS score</button>
