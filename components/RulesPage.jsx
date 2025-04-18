@@ -4,7 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { chatResponse} from "../utils/actions";
 import toast from "react-hot-toast";
 
-// THIS IS THE LIVE CHAT APPLICATION FOR OUR APP.
+// THIS IS THE Rules and Regulation Bot OUR APP.
 
 // {
 //     candidates: [
@@ -29,7 +29,7 @@ import toast from "react-hot-toast";
 // }
 
 
-function ChatApp() {
+function RulesPage() {
     const [text, setText] = useState("");
     const [messages, setMessages] = useState([]);
 
@@ -42,7 +42,7 @@ function ChatApp() {
             }
             toast.success("Answered!!!");
             // Assuming result is the key holding the chat response
-            let result = data.content.parts[0].text;
+            let result = data;
             setMessages((prevMessages) => [...prevMessages, { role: 'bot', parts:[{text : result}]}]);
         },
         onError: () => {
@@ -65,7 +65,7 @@ function ChatApp() {
     return (
         <div className="min-h-[calc(100vh-6rem)] grid grid-rows-[1fr,auto]">
             <div>
-                <h1 className="text-3xl relative bottom-5">Google Gemini AI ChatBot</h1>
+                <h1 className="text-3xl relative bottom-5">IIITT Rules & Regulation AI ChatBot🤖</h1>
                 {
                     messages.map((message, index) => {
 
@@ -89,7 +89,7 @@ function ChatApp() {
                 <div className="join w-full absolute bottom-auto mt-5">
                     <input
                         type="text"
-                        placeholder="Message VoyageVision"
+                        placeholder="Type Here to Ask Bot..."
                         className="input input-bordered join-item w-full"
                         name="text"
                         value={text}
@@ -109,4 +109,4 @@ function ChatApp() {
     );
 }
 
-export {ChatApp};
+export {RulesPage};

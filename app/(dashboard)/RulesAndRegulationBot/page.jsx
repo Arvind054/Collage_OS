@@ -1,5 +1,5 @@
 import React from "react";
-import {ChatApp} from "../../../components/RulesPage";
+import {RulesPage} from "../../../components/RulesPage";
 import {
     dehydrate,
     HydrationBoundary,
@@ -17,7 +17,7 @@ async function GeminiChat() {
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
             <div className="m-10">
-                <ChatApp></ChatApp>
+                <RulesPage></RulesPage>
             </div>
         </HydrationBoundary>
     );
