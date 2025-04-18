@@ -15,4 +15,13 @@ datasource db {
 }
 
 
-// Here we will create our DB model
+// Here we will create our DB model/Schema
+
+model CreateEvent {
+  id      Int      @id @default(autoincrement())
+  hallname String
+  clubname String
+  eventname String
+  date Int
+  time Int
+}
