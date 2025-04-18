@@ -22,7 +22,7 @@ async function chatResponse(prompt: string) {
   try {
     // Choose a model that's appropriate for your use case.
     const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GEMINI_API});
-    const modelPrompt = `These are The Rules and Regulation of my Collage \n ${Collage_Rules}. \n Please Respond to the following Question : ${prompt} based on the Rules and Regulation shared Above.Please Provide the Concise and to the point answer and if the User asks something out from the Rules , just say "This Is Out of my Knowlede"`
+    const modelPrompt = `These are The Rules and Regulation of my Collage \n ${Collage_Rules}. \n Please Respond to the following Question : ${prompt} based on the Rules and Regulation shared Above.Please Provide the Concise and to the point answer and if the User asks something out from the Rules , just say "This Is Out of my Knowlede" and noting else , if the user greets just say" Hello How can i help You today" do not add any extra words from your side.`
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
       contents: modelPrompt,

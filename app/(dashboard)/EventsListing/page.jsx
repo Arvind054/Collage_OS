@@ -1,4 +1,7 @@
 import React from "react";
+
+import {Listing} from "../../../components/Listing.jsx";
+
 import {
     dehydrate,
     HydrationBoundary,
@@ -15,9 +18,11 @@ async function EventsListing() {
     
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
-            <div className="m-10">
-                {/* <ChatApp></ChatApp> */}
-                <h1>Here we will list our all events</h1>
+            <div className="m-5">
+                <h1 className="text-3xl text-white border rounded-lg p-2">Check Out All Events</h1>
+                <div className="mt-10">
+                    <Listing />
+                </div>
             </div>
         </HydrationBoundary>
     );
