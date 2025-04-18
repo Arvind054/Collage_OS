@@ -1,5 +1,4 @@
 "use server"
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { ChatGroq } from "@langchain/groq";
 import { InMemoryChatMessageHistory } from "@langchain/core/chat_history";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
@@ -7,8 +6,7 @@ import { RunnableWithMessageHistory } from "@langchain/core/runnables";
 import { HumanMessage } from "@langchain/core/messages";
 import { AIMessage } from "@langchain/core/messages";
 import { GoogleGenAI } from "@google/genai";
-
-
+import { Collage_Rules } from "./Rules";
 /**
  @notice utils folder
  @dev This folder includes all the backend specific code for our application
@@ -21,38 +19,20 @@ import { GoogleGenAI } from "@google/genai";
 // THIS IS THE FUNCTION REQUIRED TO ASK QUESTION TO AI AND GET RESPONSE. 
 async function chatResponse(prompt: string) {
   // Access your API key as an environment variable
-  const genAI = new GoogleGenerativeAI(process.env.API_KEY); 
   try {
     // Choose a model that's appropriate for your use case.
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); 
-
-    const result = await model.generateContent({
-      contents: [
-        {
-          role: 'user',
-          parts: [
-            {
-              text: prompt,
-            }
-          ],
-        }
-      ],
-      generationConfig: {
-        maxOutputTokens: 1000,
-        temperature: 0.1,
-      },
+    const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GEMINI_API});
+    const modelPrompt = `These are The Rules and Regulation of my Collage \n ${Collage_Rules}. \n Please Respond to the following Question : ${prompt} based on the Rules and Regulation shared Above.Please Provide the Concise and to the point answer and if the User asks something out from the Rules , just say "This Is Out of my Knowlede"`
+    const response = await ai.models.generateContent({
+      model: "gemini-2.0-flash",
+      contents: modelPrompt,
     });
-    // console.log(result.response.text());
-    console.log(result.response.candidates[0].content.parts[0].text);
-    return (result.response.candidates[0]);
+    return response.text;
   }
   catch (error) {
-    console.log(error);
+    return "We are Having Error Getting result,Please Try again";
   }
 };
-
-
-
 
 
 
@@ -127,14 +107,14 @@ async function langchainChatResponse(text: string) {
 
 };
 
-
+// Function to Get The Resume ATS Score Form the Model
 async function GetResumeATS_Score(ResumeText){
   try{
-    const ai = new GoogleGenAI({ apiKey: "Your Key Here" });
-    const propmt = `This is the text of my prase Reusme \n ${ResumeText}. \n Only provide the Numerical score out of 100 and Nothing Else.`
+    const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GEMINI_API});
+    const prompt = `This is the text of my prase Reusme \n ${ResumeText}. \n Only provide the Numerical score out of 100 and Nothing Else.`
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
-      contents: propmt,
+      contents: prompt,
     });
     const answer = `The ATS Score of Your Resume is ${response.text}`
     return answer;
@@ -142,9 +122,6 @@ async function GetResumeATS_Score(ResumeText){
     return "Error Getting Your Resume Score, Please Try After Some time";
   }
 }
-
-
-
 
 
 export { chatResponse, langchainChatResponse,GetResumeATS_Score };
