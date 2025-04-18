@@ -21,8 +21,8 @@ const CreateEvent = () => {
 
     // Here {data} struct will be destructured -> Stored in DB
     const onSubmit = (data) => {
-        
         console.log(data);
+        
         toast.success("form submitted");
     }
 
