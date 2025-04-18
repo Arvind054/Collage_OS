@@ -1,6 +1,12 @@
 import { CiMenuFries } from "react-icons/ci";
 import { SideBar } from "../../components/SideBar";
 
+
+/**
+ * This file is the common layout of our (dashboard) folder
+ */
+
+
 function LayoutPage({ children }) {
 
     return (

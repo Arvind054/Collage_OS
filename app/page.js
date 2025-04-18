@@ -1,6 +1,11 @@
 import Link from "next/link";
 import React from "react";
 
+
+/**
+ @notice page.js is our HomePage
+ */
+
 function HomePage(){
 
   return (

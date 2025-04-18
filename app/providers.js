@@ -1,12 +1,23 @@
 'use client';
 import { Toaster } from 'react-hot-toast';
 import React from 'react'; 
-
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 
-function Providers({ children }) {
+/**
+ @notice Providers.js
+
+ @dev Providers contains all the third-party providers and wrappers which we are going to use in our application
+ @dev This can be:
+    * Authentication
+    * Toaster
+    * React forms
+ @dev Here as we can see we are wrapping our children insider all the providers we are going to use.
+ */
+
+
+function Providers({children}) {
   const [queryClient] = React.useState(
     () =>
       new QueryClient({

@@ -11,6 +11,7 @@ async function GeminiChat() {
     await new Promise((resolve) => { setTimeout(resolve, 1000) });
 
     // THIS WILL CREATE NEW QUERY CLIENT.
+    // This is required only for our querying purpose
     const queryClient = new QueryClient(); 
     
     return (

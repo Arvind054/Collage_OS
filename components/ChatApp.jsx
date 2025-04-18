@@ -4,7 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { chatResponse} from "../utils/actions";
 import toast from "react-hot-toast";
 
-// THIS IS THE LIVE CHAT APPLICATION FOR OUR APP.   
+// THIS IS THE LIVE CHAT APPLICATION FOR OUR APP.
 
 // {
 //     candidates: [

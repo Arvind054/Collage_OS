@@ -9,6 +9,15 @@ import { AIMessage } from "@langchain/core/messages";
 
 
 
+/**
+ @notice utils folder
+ @dev This folder includes all the backend specific code for our application
+ @dev We can create different files for backend code for our specific feature
+ @notice This method of writing backend code is efficient and easy to understand
+ */
+
+
+
 // THIS IS THE FUNCTION REQUIRED TO ASK QUESTION TO AI AND GET RESPONSE. 
 async function chatResponse(prompt: string) {
   // Access your API key as an environment variable
