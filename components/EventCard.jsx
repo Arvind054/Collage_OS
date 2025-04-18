@@ -4,10 +4,10 @@ import React from 'react'
 
 /**
  @dev Important params we required for DB model are:
-    1. Hall Name //
-    2. Status//
-    3. Date //
-    4. Event Name//
+    1. Hall Name
+    2. Status
+    3. Date 
+    4. Event Name
     5. Time Slot
     6. Club Name
  */
