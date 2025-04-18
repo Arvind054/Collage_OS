@@ -1,4 +1,7 @@
 import React from "react";
+
+import { CreateEvent } from "../../../components/CreateEvent";
+
 import {
     dehydrate,
     HydrationBoundary,
@@ -11,13 +14,13 @@ async function EventManagement() {
 
     // THIS WILL CREATE NEW QUERY CLIENT.
     // This is required only for our querying purpose
-    const queryClient = new QueryClient(); 
-    
+    const queryClient = new QueryClient();
+
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
             <div className="m-10">
-                {/* <ChatApp></ChatApp> */}
-                <h1>Here we will manage our all events</h1>
+                <h1 className="text-3xl text-white border rounded-lg p-2">Create Event for your Club!!!</h1>
+                <CreateEvent></CreateEvent>
             </div>
         </HydrationBoundary>
     );
