@@ -6,7 +6,7 @@ import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { RunnableWithMessageHistory } from "@langchain/core/runnables";
 import { HumanMessage } from "@langchain/core/messages";
 import { AIMessage } from "@langchain/core/messages";
-
+import { GoogleGenAI } from "@google/genai";
 
 
 /**
@@ -128,9 +128,23 @@ async function langchainChatResponse(text: string) {
 };
 
 
+async function GetResumeATS_Score(ResumeText){
+  try{
+    const ai = new GoogleGenAI({ apiKey: "Your Key Here" });
+    const propmt = `This is the text of my prase Reusme \n ${ResumeText}. \n Only provide the Numerical score out of 100 and Nothing Else.`
+    const response = await ai.models.generateContent({
+      model: "gemini-2.0-flash",
+      contents: propmt,
+    });
+    const answer = `The ATS Score of Your Resume is ${response.text}`
+    return answer;
+  }catch(e){
+    return "Error Getting Your Resume Score, Please Try After Some time";
+  }
+}
 
 
 
 
 
-export { chatResponse, langchainChatResponse };
+export { chatResponse, langchainChatResponse,GetResumeATS_Score };
