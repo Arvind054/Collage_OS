@@ -1,5 +1,4 @@
 import React from "react";
-import { LangChainChat } from "../../../components/LangChainChat";
 import {
     dehydrate,
     HydrationBoundary,
@@ -7,19 +6,21 @@ import {
 } from '@tanstack/react-query';
 export const dynamic = 'force-dynamic';
 
-async function LangchainChat() {
+async function EventsListing() {
     await new Promise((resolve) => { setTimeout(resolve, 1000) });
 
     // THIS WILL CREATE NEW QUERY CLIENT.
-    const queryClient = new QueryClient();
+    // This is required only for our querying purpose
+    const queryClient = new QueryClient(); 
     
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
-            <div className="m-8">
-               <LangChainChat></LangChainChat>
+            <div className="m-10">
+                {/* <ChatApp></ChatApp> */}
+                <h1>Here we will list our all events</h1>
             </div>
         </HydrationBoundary>
     );
 };
- 
-export default LangchainChat;  
+
+export default EventsListing;  

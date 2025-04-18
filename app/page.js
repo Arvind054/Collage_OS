@@ -16,7 +16,7 @@ function HomePage(){
         <p className="py-6 text-xl">
           We have provided you an option to select your preffered language Model for the ChatBot. So please select the model of chatbot and continue with your QnA session with an GenAI powered ChatBot.
         </p>
-        <Link href="/GeminiChat">
+        <Link href="/EventsListing">
           <button className="btn btn-primary">Get Started</button>
         </Link>
         

@@ -19,15 +19,15 @@ const SideBar = () => {
 
         {/* For General Corner */}
         <div>
-          <h1 className='btn btn-primary btn-lg w-full'>General Corner</h1>
+          <h1 className='btn btn-primary btn-lg w-full'>Generals Corner</h1>
 
-          <Link href='/GeminiChat'>
+          <Link href='/EventsListing'>
             <button className="btn btn-ghost w-full capitalize">Events Listing</button>
           </Link>
-          <Link href='/LangChainChat'>
+          <Link href='/EventManagement'>
             <button className="btn btn-ghost w-full capitalize">Event Management</button>
           </Link>
-          <Link href='/LGpdfParser'>
+          <Link href='/CampusAssets'>
             <button className="btn btn-ghost w-full capitalize">Booking campus assets</button>
           </Link>
         </div>
@@ -42,13 +42,13 @@ const SideBar = () => {
           <Link href='/GeminiChat'>
             <button className="btn btn-ghost w-full capitalize">Gemini ChatBot</button>
           </Link>
-          <Link href='/LangChainChat'>
+          <Link href='/ResumeScore'>
             <button className="btn btn-ghost w-full capitalize">Resume ATS score</button>
           </Link>
-          <Link href='/LGpdfParser'>
+          <Link href='/Complaints'>
             <button className="btn btn-ghost w-full capitalize">Complaint/Request Submission Portal</button>
           </Link>
-          <Link href='#'>
+          <Link href='/Interview'>
             <button className="btn btn-ghost w-full capitalize">AI interview</button>
           </Link>
         </div>
