@@ -6,12 +6,12 @@ import toast from "react-hot-toast";
 
 /**
  * This are the required Params:
-    1. Hall Name//
+    1. Hall Name
     2. Status
     3. Date 
-    4. Event Name //
+    4. Event Name 
     5. Time Slot
-    6. Club Name //
+    6. Club Name 
  */
 
 

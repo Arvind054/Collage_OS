@@ -7,7 +7,8 @@ import {
     HydrationBoundary,
     QueryClient,
 } from '@tanstack/react-query';
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic';
+
 
 async function EventManagement() {
     await new Promise((resolve) => { setTimeout(resolve, 1000) });
