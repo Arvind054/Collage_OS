@@ -1,4 +1,5 @@
 import React from "react";
+import ResumeATS_Score from "../../../components/ResumeATS_Score";
 import {
     dehydrate,
     HydrationBoundary,
@@ -15,8 +16,8 @@ async function ResumeScore() {
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
             <div className="m-8">
-               {/* <ResumeScore></ResumeScore> */}
-               <h1>Here we will add Resume ATS Score</h1>
+                {/*Resume  ATS Score  */}
+                <ResumeATS_Score></ResumeATS_Score> 
             </div>
         </HydrationBoundary>
     );
