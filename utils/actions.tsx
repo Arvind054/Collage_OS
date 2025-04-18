@@ -112,8 +112,8 @@ async function langchainChatResponse(text: string) {
 
 };
 
-
-async function GetResumeATS_Score(ResumeText){
+    // IF WE HAVE AN APP WHICH OPERATES MULTIPLE USER IN SAME APP. WE CAN SAVE THEIR HISTORY WITH THE UNIQUE 
+async function GetResumeATS_Score(ResumeText:any){
   try{
     const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GEMINI_API});
     const prompt = `This is the text of my prase Reusme \n ${ResumeText}. \n Only provide the Numerical score out of 100 and Nothing Else.`
@@ -128,6 +128,5 @@ async function GetResumeATS_Score(ResumeText){
   }
 }
 
+export { chatResponse,GetResumeATS_Score };
 
-
-export { chatResponse, langchainChatResponse,GetResumeATS_Score };
