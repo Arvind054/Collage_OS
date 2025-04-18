@@ -1,5 +1,4 @@
 "use server"
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { ChatGroq } from "@langchain/groq";
 import { InMemoryChatMessageHistory } from "@langchain/core/chat_history";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
@@ -7,8 +6,7 @@ import { RunnableWithMessageHistory } from "@langchain/core/runnables";
 import { HumanMessage } from "@langchain/core/messages";
 import { AIMessage } from "@langchain/core/messages";
 import { GoogleGenAI } from "@google/genai";
-
-
+import { Collage_Rules } from "./Rules";
 /**
  @notice utils folder
  @dev This folder includes all the backend specific code for our application
@@ -32,10 +30,9 @@ async function chatResponse(prompt: string) {
     return response.text;
   }
   catch (error) {
-    console.log(error);
+    return "We are Having Error Getting result,Please Try again";
   }
 };
-
     // IF WE HAVE AN APP WHICH OPERATES MULTIPLE USER IN SAME APP. WE CAN SAVE THEIR HISTORY WITH THE UNIQUE 
 async function GetResumeATS_Score(ResumeText:any){
   try{
@@ -52,7 +49,5 @@ async function GetResumeATS_Score(ResumeText:any){
   }
 }
 
+
 export { chatResponse,GetResumeATS_Score };
-
-
-export { chatResponse, langchainChatResponse,GetResumeATS_Score };
