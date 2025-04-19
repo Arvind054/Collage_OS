@@ -1,4 +1,5 @@
 "use server"
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { ChatGroq } from "@langchain/groq";
 import { InMemoryChatMessageHistory } from "@langchain/core/chat_history";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
