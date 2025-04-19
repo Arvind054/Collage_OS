@@ -15,12 +15,12 @@ import React from 'react'
 const EventCard = (  /* { hallName,status,date,eventName,time,clubName } */   ) => {
     return (
         <div className="card bg-base-300 w-96 shadow-sm border">
-            {/* <figure>
+            <figure>
                 <img
                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                     alt="Shoes" 
                 />
-            </figure> */}
+            </figure>
             <div className="card-body">
                 <h1 className="card-title">
                     Web Dev Club Orientation Session

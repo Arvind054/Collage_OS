@@ -1,5 +1,4 @@
 "use server"
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { ChatGroq } from "@langchain/groq";
 import { InMemoryChatMessageHistory } from "@langchain/core/chat_history";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
@@ -8,6 +7,7 @@ import { HumanMessage } from "@langchain/core/messages";
 import { AIMessage } from "@langchain/core/messages";
 import { GoogleGenAI } from "@google/genai";
 import { Collage_Rules } from "./Rules";
+
 import { useRef, useState } from "react";
 import toast from "react-hot-toast";
 /**
@@ -35,7 +35,10 @@ async function chatResponse(prompt: string) {
     return "We are Having Error Getting result,Please Try again";
   }
 };
+
     // Function to get the ATS Score of the Resume. 
+
+    // IF WE HAVE AN APP WHICH OPERATES MULTIPLE USER IN SAME APP. WE CAN SAVE THEIR HISTORY WITH THE UNIQUE 
 async function GetResumeATS_Score(ResumeText:any){
   try{
     const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GEMINI_API});
@@ -50,6 +53,7 @@ async function GetResumeATS_Score(ResumeText:any){
     return "Error Getting Your Resume Score, Please Try After Some time";
   }
 }
+
 async function GenerateInterviewQuestions(resume:string, interviewType:string, questionsCount:string,difficulty: string,JobDesc:string ){
   try{
     const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_GEMINI_API});
@@ -84,3 +88,5 @@ async function EvaluateInterviewScore(text: string){
   }
 }
 export { chatResponse,GetResumeATS_Score,GenerateInterviewQuestions,EvaluateInterviewScore};
+
+
